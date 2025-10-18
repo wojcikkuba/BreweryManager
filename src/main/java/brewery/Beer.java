@@ -28,4 +28,4 @@ public abstract class Beer implements Cloneable {
         return "Beer{name'" + name + "', alcoholContent=" + alcoholContent + "%, style'" + style + "'}";
     }
 }
-//Koniec, Tydzień 2, Wzorzec Prototype 1
+//Koniec, Tydzień 1, Wzorzec Prototype 1

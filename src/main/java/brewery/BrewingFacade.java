@@ -12,12 +12,12 @@ public class BrewingFacade {
     }
 
     public void brewStandardLager() {
-        System.out.println("Rozpoczynanie warzenia standardowego Lagera przy użyciu Fasady...");
+        System.out.println("Rozpoczynanie warzenia standardowego Lagera przy użyciu Fasady");
 
         // Krok 1: Utworzenie receptury za pomocą Buildera
         Recipe lagerRecipe = new Recipe.RecipeBuilder()
                 .malt("Pilsner Malt")
-                .hops("Saaz")
+                .hops("Lubelski")
                 .fermentationDays(12)
                 .build();
 
@@ -30,13 +30,13 @@ public class BrewingFacade {
     }
 
     public void brewStandardWitbier() {
-        System.out.println("Rozpoczynanie warzenia standardowego Witbiera przy użyciu Fasady...");
+        System.out.println("Rozpoczynanie warzenia standardowego Witbiera przy użyciu Fasady");
 
         Recipe witbierRecipe = new Recipe.RecipeBuilder()
                 .malt("Wheat Malt")
-                .hops("Hallertau")
+                .hops("Warszawski")
                 .fermentationDays(10)
-                .additionalIngredients("Coriander, Orange Peel")
+                .additionalIngredients("Bark")
                 .build();
 
         Beer witbier = BeerFactory.createBeer("witbier");

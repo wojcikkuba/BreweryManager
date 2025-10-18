@@ -1,6 +1,6 @@
 package brewery;
 
-// Tydzień 2, Wzorzec Prototype - implementacja konkretna - Lager
+// Tydzień 1, Wzorzec Prototype - implementacja konkretna - Lager
 // Konkretna implementacja piwa typu Lager z możliwością klonowania.
 
 public class Lager extends Beer{
