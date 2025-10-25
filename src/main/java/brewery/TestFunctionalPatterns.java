@@ -21,5 +21,35 @@ public class TestFunctionalPatterns {
         controller.undoLastAction();
         controller.undoLastAction();
         controller.undoLastAction();
+
+        System.out.println("\n4. Test wzorca Mediator:");
+        BreweryMediator mediator = new BreweryMediator();
+        ProductionUnit production = new ProductionUnit(mediator);
+        InventoryMediator inventory = new InventoryMediator(mediator);
+        mediator.setProduction(production);
+        mediator.setInventory(inventory);
+
+        production.finishBatch();
+        inventory.detectLowStock();
+
+        System.out.println("\n5. Test wzorca Memento:");
+        RecipeOriginator recipe = new RecipeOriginator();
+        RecipeCaretaker caretaker = new RecipeCaretaker();
+
+        recipe.setMalt("Pilsner Malt");
+        recipe.setHops("Saaz");
+        recipe.setFermentationDays(10);
+        System.out.println("Obecna receptura: " + recipe);
+
+        caretaker.saveState(recipe);
+
+        recipe.setMalt("Munich Malt");
+        recipe.setHops("Fuggle");
+        recipe.setFermentationDays(14);
+        System.out.println("Zmodyfikowana receptura: " + recipe);
+
+        System.out.println("Przywracanie poprzedniego stanu...");
+        caretaker.undo(recipe);
+        System.out.println("Receptura po przywróceniu: " + recipe);
     }
 }
