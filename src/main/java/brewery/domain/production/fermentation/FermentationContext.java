@@ -7,7 +7,8 @@ import brewery.domain.production.fermentation.FermentationStrategy;
 public class FermentationContext implements FermentationOperations {
 
     private FermentationStrategy strategy;
-    private int temperature = 20;
+    private static final int DEFAULT_TEMPERATURE = 20;
+    private int temperature = DEFAULT_TEMPERATURE;
 
     public FermentationContext(FermentationStrategy strategy) {
         this.strategy = strategy;

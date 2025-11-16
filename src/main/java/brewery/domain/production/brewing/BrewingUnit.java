@@ -6,7 +6,9 @@ package brewery.domain.production.brewing;
 import brewery.domain.production.brewing.operations.BrewingOperations;
 
 public class BrewingUnit implements BrewingOperations {
-
+    private static final int DEFAULT_TEMPERATURE_INCREASE = 25;
+    private static final int MIXING_TEMPERATURE_INCREASE = 10;
+    private static final int COOLING_STEP = 5;
     public void startBrewing() {
         System.out.println("Brewing unit started the brewing process...");
     }
@@ -32,7 +34,7 @@ public class BrewingUnit implements BrewingOperations {
         prepareIngredients();
         prepareBrewingEquipment();
         mixRawIngredients();
-        increaseTemperature(25);
+        increaseTemperature(DEFAULT_TEMPERATURE_INCREASE);
         System.out.println("Warzenie zostało rozpoczęte (ISP).");
     }
 
@@ -49,6 +51,8 @@ public class BrewingUnit implements BrewingOperations {
     @Override
     public void mixRawIngredients() {
         System.out.println("Mieszanie składników (ISP).");
+        increaseTemperature(MIXING_TEMPERATURE_INCREASE);
+
     }
 
     @Override
