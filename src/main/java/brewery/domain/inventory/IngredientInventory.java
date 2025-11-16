@@ -35,24 +35,49 @@ public class IngredientInventory implements Subject {
             observer.update(message);
         }
     }
+    private static final int DEFAULT_MALT_AMOUNT = 50;
+    private static final int DEFAULT_HOPS_AMOUNT = 20;
+    private static final int DEFAULT_WATER_AMOUNT = 999;
+    private static final int DEFAULT_YEAST_AMOUNT = 10;
     private final Map<String, Integer> stock = new HashMap<>();
-
+    private void loadDefaultInventory() {
+        stock.put("malt", DEFAULT_MALT_AMOUNT);
+        stock.put("hops", DEFAULT_HOPS_AMOUNT);
+        stock.put("water", DEFAULT_WATER_AMOUNT);
+        stock.put("yeast", DEFAULT_YEAST_AMOUNT);
+    }
     public IngredientInventory() {
-        stock.put("malt", 50);
-        stock.put("hops", 20);
-        stock.put("water", 999);
-        stock.put("yeast", 10);
+        loadDefaultInventory();
     }
 
-    public boolean takeIngredient(String name, int amount) {
-        int current = stock.getOrDefault(name, 0);
-        if (current < amount) {
-            System.out.println("[Inventory] Not enough " + name);
+    public void addIngredient(String ingredient, int amount) {
+        int newAmount = stock.getOrDefault(ingredient, 0) + amount;
+        stock.put(ingredient, newAmount);
+        System.out.println("Dodano " + amount + " jednostek składnika: " + ingredient + ". Razem: " + newAmount);
+    }
+
+    public boolean useIngredient(String ingredient, int amount) {
+        int available = stock.getOrDefault(ingredient, 0);
+        if (available < amount) {
+            System.out.println("BRAK składnika: " + ingredient
+                    + ". Dostępne: " + available + ", potrzebne: " + amount);
             return false;
         }
-        stock.put(name, current - amount);
-        System.out.println("[Inventory] Took " + amount + " of " + name + ", left: " + stock.get(name));
+        stock.put(ingredient, available - amount);
+        System.out.println("Użyto " + amount + " jednostek składnika: " + ingredient
+                + ". Pozostało: " + (available - amount));
         return true;
+    }
+
+    public int getAmount(String ingredient) {
+        return stock.getOrDefault(ingredient, 0);
+    }
+
+    public void showInventory() {
+        System.out.println("\n=== Aktualny stan magazynu składników ===");
+        stock.forEach((name, amount) ->
+                System.out.println("- " + name + ": " + amount + " jednostek")
+        );
     }
 }
 //Koniec, Tydzień 2, Wzorzec Observer 3
