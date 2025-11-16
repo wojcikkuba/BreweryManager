@@ -1,7 +1,7 @@
-package brewery;
+package brewery.tests;
 
 import brewery.application.BrewingController;
-import brewery.domain.production.BrewingUnit;
+import brewery.domain.production.brewing.BrewingUnit;
 import brewery.domain.production.ProductionUnit;
 import brewery.domain.recipe.RecipeCaretaker;
 import brewery.domain.recipe.RecipeOriginator;

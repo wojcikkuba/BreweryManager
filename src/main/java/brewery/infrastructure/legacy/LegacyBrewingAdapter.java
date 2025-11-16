@@ -6,10 +6,10 @@ package brewery.infrastructure.legacy;
 
 import brewery.domain.beer.Beer;
 
-public class BeerAdapter implements OldBrewingSystem {
+public class LegacyBrewingAdapter implements LegacyBrewingSystem {
     private Beer beer;
 
-    public BeerAdapter(Beer beer) {
+    public LegacyBrewingAdapter(Beer beer) {
         this.beer = beer;
     }
 

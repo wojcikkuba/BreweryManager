@@ -1,4 +1,4 @@
-package brewery.domain.fermentation;
+package brewery.domain.production.fermentation;
 
 // Implementacja: szybka fermentacja.
 public class FastFermentationStrategy implements FermentationStrategy {

@@ -3,7 +3,7 @@ package brewery.patterns.command;
 //Tydzień 2, Wzorzec Command 5 - ConcreteCommand
 // Polecenie napełniania butelek piwem.
 
-import brewery.domain.production.BrewingUnit;
+import brewery.domain.production.brewing.BrewingUnit;
 
 public class FillBottlesCommand implements Command {
     private BrewingUnit brewingUnit;

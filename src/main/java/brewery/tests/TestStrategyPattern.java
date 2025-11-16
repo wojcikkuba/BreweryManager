@@ -1,8 +1,8 @@
-package brewery;
+package brewery.tests;
 
-import brewery.domain.fermentation.FastFermentationStrategy;
-import brewery.domain.fermentation.FermentationContext;
-import brewery.domain.fermentation.SlowFermentationStrategy;
+import brewery.domain.production.fermentation.FastFermentationStrategy;
+import brewery.domain.production.fermentation.FermentationContext;
+import brewery.domain.production.fermentation.SlowFermentationStrategy;
 
 public class TestStrategyPattern {
     public static void main(String[] args) {

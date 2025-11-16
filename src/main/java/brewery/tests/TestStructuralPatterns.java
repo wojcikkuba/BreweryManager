@@ -1,10 +1,10 @@
-package brewery;
+package brewery.tests;
 
 import brewery.application.BrewingFacade;
 import brewery.domain.beer.Beer;
 import brewery.domain.beer.BeerFactory;
-import brewery.infrastructure.legacy.BeerAdapter;
-import brewery.infrastructure.legacy.OldBrewingSystem;
+import brewery.infrastructure.legacy.LegacyBrewingAdapter;
+import brewery.infrastructure.legacy.LegacyBrewingSystem;
 import brewery.patterns.decorator.ExtraHopsDecorator;
 
 public class TestStructuralPatterns {
@@ -35,7 +35,7 @@ public class TestStructuralPatterns {
         Beer myLager = BeerFactory.createCustomBeer("lager", "Modern Pilsner");
 
         // Tworzymy adapter, który opakowuje nasz nowy obiekt
-        OldBrewingSystem adapter = new BeerAdapter(myLager);
+        LegacyBrewingSystem adapter = new LegacyBrewingAdapter(myLager);
 
         // Używamy starego interfejsu do interakcji z nowym obiektem
         adapter.startBrewing("Legacy Beer", 5.0); // parametry są ignorowane przez adapter

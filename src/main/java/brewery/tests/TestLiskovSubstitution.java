@@ -1,12 +1,12 @@
-package brewery;
+package brewery.tests;
 
 import brewery.domain.beer.Beer;
 import brewery.domain.beer.Lager;
 import brewery.domain.beer.Witbier;
-import brewery.domain.fermentation.FastFermentationStrategy;
-import brewery.domain.fermentation.FermentationStrategy;
-import brewery.domain.fermentation.SlowFermentationStrategy;
-import brewery.domain.production.BrewingUnit;
+import brewery.domain.production.fermentation.FastFermentationStrategy;
+import brewery.domain.production.fermentation.FermentationStrategy;
+import brewery.domain.production.fermentation.SlowFermentationStrategy;
+import brewery.domain.production.brewing.BrewingUnit;
 import brewery.patterns.command.CleanCommand;
 import brewery.patterns.command.Command;
 import brewery.patterns.command.FillBottlesCommand;

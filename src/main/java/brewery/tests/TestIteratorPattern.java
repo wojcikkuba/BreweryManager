@@ -1,4 +1,4 @@
-package brewery;
+package brewery.tests;
 
 import brewery.patterns.iterator.BeerBatchCollection;
 

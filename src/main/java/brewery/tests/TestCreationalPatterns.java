@@ -1,4 +1,4 @@
-package brewery;
+package brewery.tests;
 
 import brewery.application.BreweryManager;
 import brewery.domain.beer.Beer;

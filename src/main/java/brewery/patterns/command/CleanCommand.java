@@ -3,7 +3,7 @@ package brewery.patterns.command;
 // Tydzień 2, Wzorzec Command 4 - ConcreteCommand
 // Polecenie czyszczenia wyposażenia browaru
 
-import brewery.domain.production.BrewingUnit;
+import brewery.domain.production.brewing.BrewingUnit;
 
 public class CleanCommand implements Command {
     private BrewingUnit brewingUnit;
