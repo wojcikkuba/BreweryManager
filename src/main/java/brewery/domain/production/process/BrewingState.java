@@ -1,0 +1,7 @@
+package brewery.domain.production.process;
+
+//Tydzień 2, Wzorzec State
+// Interfejs stanu procesu warzenia.
+public interface BrewingState {
+    void handle(BrewingProcess context);
+}
