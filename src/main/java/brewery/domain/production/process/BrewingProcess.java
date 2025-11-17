@@ -12,10 +12,21 @@ public class BrewingProcess {
         this.state = state;
     }
 
+    /*
     public void nextStep() {
         if(state != null)
             state.handle(this);
         else
             System.out.println("Proces warzenia zakończony.");
+    }
+    */
+
+    // NOWY KOD
+    public void nextStep() {
+        if (state != null) {
+            state.handle(this);
+        } else {
+            throw new IllegalStateException("Proces warzenia został już zakończony.");
+        }
     }
 }
