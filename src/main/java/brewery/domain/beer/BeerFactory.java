@@ -5,6 +5,7 @@ package brewery.domain.beer;
 // Pozwala na centralne zarządzanie tworzeniem różnych typów piwa.
 
 public class BeerFactory {
+
     public static Beer createBeer(String type) {
         switch (type.toLowerCase()) {
             case "lager":

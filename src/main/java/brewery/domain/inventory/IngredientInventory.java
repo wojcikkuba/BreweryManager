@@ -56,6 +56,8 @@ public class IngredientInventory implements Subject {
         System.out.println("Dodano " + amount + " jednostek składnika: " + ingredient + ". Razem: " + newAmount);
     }
 
+    // STARY KOD
+    /*
     public boolean useIngredient(String ingredient, int amount) {
         int available = stock.getOrDefault(ingredient, 0);
         if (available < amount) {
@@ -67,6 +69,21 @@ public class IngredientInventory implements Subject {
         System.out.println("Użyto " + amount + " jednostek składnika: " + ingredient
                 + ". Pozostało: " + (available - amount));
         return true;
+    }
+    */
+
+
+    public void useIngredient(String ingredient, int amount) {
+        int available = stock.getOrDefault(ingredient, 0);
+        if (available < amount) {
+            // Zamiast 'return false', rzucamy wyjątek
+            throw new IllegalStateException("BRAK składnika: " + ingredient
+                    + ". Dostępne: " + available + ", potrzebne: " + amount);
+        }
+        stock.put(ingredient, available - amount);
+        System.out.println("Użyto " + amount + " jednostek składnika: " + ingredient
+                + ". Pozostało: " + (available - amount));
+
     }
 
     public int getAmount(String ingredient) {

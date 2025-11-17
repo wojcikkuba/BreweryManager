@@ -16,6 +16,7 @@ public class BrewingController {
         commandHistory.push(command);
     }
 
+    /*
     public void undoLastAction() {
         if (!commandHistory.isEmpty()) {
             Command lastCommand = commandHistory.pop();
@@ -24,6 +25,18 @@ public class BrewingController {
         } else {
             System.out.println("No actions to undo.");
         }
+    }
+    */
+
+    // NOWY KOD
+    public void undoLastAction() {
+        if (commandHistory.isEmpty()) {
+            // Zamiast pisać w konsoli, rzucamy wyjątek
+            throw new IllegalStateException("No actions to undo.");
+        }
+        Command lastCommand = commandHistory.pop();
+        System.out.println("Undoing last action...");
+        lastCommand.undo();
     }
 }
 
