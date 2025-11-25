@@ -1,3 +1,7 @@
+// Tydzień 4, Testy jednostkowe dla klasy FermentationContext
+// Weryfikacja inicjalizacji kontekstu fermentacji, ustawienia temperatury i zmiany strategii fermentacji
+// Wykorzystanie mocków do symulacji zachowania strategii fermentacji
+
 package brewery.domain.production.fermentation;
 
 import brewery.domain.production.fermentation.FermentationStrategy;
@@ -49,13 +53,13 @@ class FermentationContextTest {
         FermentationStrategy newStrategy = new FermentationStrategy() {
             @Override
             public void ferment() {
-                System.out.println("New strategy");
+                System.out.println("Nowa strategia");
             }
         };
         fermentationContext.setStrategy(newStrategy);
         fermentationContext.performFermentation();
         String output = outputStream.toString();
-        assertTrue(output.contains("New strategy"));
+        assertTrue(output.contains("Nowa strategia"));
     }
 
     @Test
@@ -75,3 +79,4 @@ class FermentationContextTest {
         System.setOut(originalOut);
     }
 }
+// Koniec, Tydzień 4, Testy jednostkowe dla klasy FermentationContext

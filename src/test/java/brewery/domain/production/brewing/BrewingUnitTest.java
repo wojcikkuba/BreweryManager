@@ -1,3 +1,6 @@
+// Tydzień 4, Testy jednostkowe dla klasy BrewingUnit
+// Weryfikacja poprawności działania metod związanych  z procesem warzenia piwa i kontroli temperatury.
+// Wykorzystanie ByteArrayOutputStream do przechwycenia i analizy wyjścia konsoli.
 package brewery.domain.production.brewing;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -62,3 +65,4 @@ class BrewingUnitTest {
         System.setOut(originalOut);
     }
 }
+// Koniec, Tydzień 4, Testy jednostkowe dla klasy BrewingUnit

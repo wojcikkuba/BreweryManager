@@ -1,3 +1,7 @@
+// Tydzień 4, Testy jednostkowe dla klasy Recipe
+// Weryfikacja poprawności działania wzorca Builder przy tworzeniu piwa z pełnymi i domyślnymi parametrami
+// Obsługa wyjątków IllegalStateException przy brakujących lub nieprawidłowych wymaganych polach
+
 package brewery.domain.recipe;
 
 import org.junit.jupiter.api.Test;
@@ -72,3 +76,4 @@ class RecipeTest {
         );
     }
 }
+// Koniec, Tydzień 4, Testy jednostkowe dla klasy Recipe

@@ -1,3 +1,6 @@
+// Tydzień 4, Testy jednostkowe dla klasy IngredientInventory
+// Kompleksowe testy jednostkowe klasy IngredientInventory
+// Weryfikacja inicjalizacji magazynu, dodawania i pobierania składników oraz obsługi wyjątków.
 package brewery.domain.inventory;
 
 import brewery.patterns.observer.Observer;
@@ -57,3 +60,5 @@ class IngredientInventoryTest {
         verify(mockObserver).update("Stan słodu zmieniony na: 100");
     }
 }
+
+// Koniec, Tydzień 4, Testy jednostkowe dla klasy IngredientInventory
